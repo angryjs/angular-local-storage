@@ -10,7 +10,7 @@ angularLocalStorage.constant('prefix', 'ls');
 // path = The web path the cookie represents
 angularLocalStorage.constant('cookie', { expiry:30, path: '/'});
 
-angularLocalStorage.service('localStorageService', [
+angularLocalStorage.service('LocalStorage', [
   '$rootScope',
   'prefix',
   'cookie',
@@ -222,14 +222,14 @@ angularLocalStorage.service('localStorageService', [
 
     return {
       isSupported: browserSupportsLocalStorage,
-      add: addToLocalStorage,
+      set: addToLocalStorage,
       get: getFromLocalStorage,
       remove: removeFromLocalStorage,
       clearAll: clearAllFromLocalStorage,
       stringifyJson: stringifyJson,
       parseJson: parseJson,
       cookie: {
-        add: addToCookies,
+        set: addToCookies,
         get: getFromCookies,
         remove: removeFromCookies,
         clearAll: clearAllFromCookies
