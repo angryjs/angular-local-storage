@@ -225,14 +225,14 @@ angularLocalStorage.service('LocalStorage', [
       set: addToLocalStorage,
       get: getFromLocalStorage,
       remove: removeFromLocalStorage,
-      clearAll: clearAllFromLocalStorage,
+      clear: clearAllFromLocalStorage,
       stringifyJson: stringifyJson,
       parseJson: parseJson,
       cookie: {
         set: addToCookies,
         get: getFromCookies,
         remove: removeFromCookies,
-        clearAll: clearAllFromCookies
+        clear: clearAllFromCookies
       }
     };
 
