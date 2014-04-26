@@ -42,7 +42,7 @@ angular.module('angryjs.localStorage', [])
       }
 
       try {
-        localStorage.setItem(prefix+key, value);
+        localStorage.setItem(prefix+key, angular.toJson(value));
       } catch (e) {
         $rootScope.$broadcast('LocalStorageModule.notification.error',e.message);
         return false;
@@ -62,7 +62,7 @@ angular.module('angryjs.localStorage', [])
       if (!item) {
         return null;
       }
-      return item;
+      return angular.fromJson(item);
     };
 
     // Remove an item from local storage
